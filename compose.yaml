@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  productservice:
+    container_name: productservice
+    build:
+      context: .
+      dockerfile: ProductManagement.Presentation/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:5028
+    ports:
+      - "5028:5028"
+    depends_on:
+      - postgres_productdb
+    networks:
+      - inno_shop_network
+    command: bash -c "dotnet ef database update --project ProductManagement.Infrastructure --startup-project ProductManagement.Presentation && dotnet /App/out/ProductManagement.Presentation.dll"
+  
+  userservice:
+    container_name: userservice
+    build:
+      context: .
+      dockerfile: UserManagement.Presentation/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://0.0.0.0:5041
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5041:5041"
+    depends_on:
+      - sqlserver_userdb
+      - smtp4dev
+      - productservice
+    networks:
+      - inno_shop_network
+    command: bash -c "dotnet ef database update --project UserManagement.Infrastructure --startup-project UserManagement.Presentation && dotnet /App/out/UserManagement.Presentation.dll"
+
+  sqlserver_userdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: always
+    environment:
+      - MSSQL_PID=Developer
+      - MSSQL_SA_PASSWORD=pa55w0rd!
+      - ACCEPT_EULA=Y
+    ports:
+      - "1434:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql/data
+    user: root
+    networks:
+      - inno_shop_network
+    
+  postgres_productdb:
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 243395
+      POSTGRES_DB: ProductsDb
+    ports:
+      - "5433:5432"
+    volumes:
+      - product-data:/var/lib/postgresql/data
+    networks:
+      - inno_shop_network
+      
+  smtp4dev:
+    image: rnwood/smtp4dev:latest
+    container_name: smtp4dev
+    ports:
+      - "2525:25"
+      - "5050:80"
+    volumes:
+      - smtp4dev_data:/smtp
+    networks:
+      - inno_shop_network
+
+volumes:
+  product-data:
+  user-data:
+  smtp4dev_data:
+  sqlserver_data:
+    
+networks:
+  inno_shop_network:
+    driver: bridge
