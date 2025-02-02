@@ -1,3 +1,3 @@
 namespace UserManagement.Application.DTOs;
 
-public record UserLoginDto(string Email, string Password);
+public record LoginDto(string Email, string Password);

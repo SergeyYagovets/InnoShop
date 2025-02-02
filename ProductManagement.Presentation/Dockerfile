@@ -1,23 +1,11 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-USER $APP_UID
-WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+﻿FROM mcr.microsoft.com/dotnet/sdk:9.0@sha256:3fcf6f1e809c0553f9feb222369f58749af314af6f063f389cbd2f913b4ad556 AS build
+WORKDIR /App
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["ProductManagement.Presentation/ProductManagement.Presentation.csproj", "ProductManagement.Presentation/"]
-RUN dotnet restore "ProductManagement.Presentation/ProductManagement.Presentation.csproj"
-COPY . .
-WORKDIR "/src/ProductManagement.Presentation"
-RUN dotnet build "ProductManagement.Presentation.csproj" -c $BUILD_CONFIGURATION -o /app/build
+COPY ProductManagement.Presentation/ProductManagement.Presentation.csproj ./
+RUN dotnet restore
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "ProductManagement.Presentation.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+COPY . ./
+RUN dotnet publish ./ProductManagement.Presentation/ProductManagement.Presentation.csproj -c Release -o out
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ProductManagement.Presentation.dll"]
+RUN dotnet tool install --global dotnet-ef --version 9.0
+ENV PATH="/root/.dotnet/tools:${PATH}"

@@ -1,6 +1,2 @@
 namespace UserManagement.Application.DTOs;
-
-public class LoginResponseDto
-{
-    
-}
+public record LoginResponseDto(string Token);

@@ -1,3 +1,3 @@
 namespace UserManagement.Application.DTOs;
 
-public record UserUpdateDto();
+public record UserUpdateDto(string Name);

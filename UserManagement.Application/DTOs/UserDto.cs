@@ -1,6 +1,3 @@
 namespace UserManagement.Application.DTOs;
 
-public class UserDto
-{
-    
-}
+public record UserDto(int Id, string Name, string Email);
