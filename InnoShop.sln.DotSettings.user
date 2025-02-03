@@ -1,2 +1,26 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AIConfiguration_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F2b08ace5e383450e96735b0e39367b417600_003Fb1_003Fd09488d0_003FIConfiguration_002Ecs/@EntryIndexedValue">ForceIncluded</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AIConfiguration_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F2b08ace5e383450e96735b0e39367b417600_003Fb1_003Fd09488d0_003FIConfiguration_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:Boolean x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/ShowAdvancedOptions/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/TestProjectMapping/=01A0313F_002D5F43_002D4B8E_002DAC9C_002D675D1A930BF9/@EntryIndexedValue">UserManagement.Tests</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/TestTemplateMapping/=xUnit/@EntryIndexedValue">33ff99d8-b1ad-4ed5-a4fd-376b97c2c841</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b2cf4575_002D8bd6_002D4a5e_002Db838_002D6957697d9810/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;UserManagement&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;Project Location="/Users/sergey_yagovets/InnoShop" Presentation="&amp;lt;UserManagement&amp;gt;" /&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.CreateProductAsync_ValidData_ReturnsProductDto&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetAllAsync_AdminUser_ReturnsAllProducts&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetAllAsync_NonAdminUser_ReturnsUserProducts&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetAllAvailableProductsAsync_ReturnsAvailableProducts&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetProductByIdAsync_AdminUser_ReturnsProduct&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetProductByIdAsync_NonAdminUser_ReturnsUserProduct&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetProductByIdAsync_ProductNotFound_ThrowsNotFoundException&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetAvailableProductsByIdAsync_ReturnsProduct&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.GetAvailableProductsByIdAsync_ProductNotFound_ThrowsNotFoundException&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.UpdateProductAsync_AdminUser_UpdatesProduct&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.UpdateProductAsync_NonAdminUser_UnauthorizedAccessException&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.DeleteProductAsync_AdminUser_DeletesProduct&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::FBCD313C-F16C-490C-80BB-BA824B606A26::net9.0::ProductManagement.Tests.UnitTests.ProductServiceTests.DeleteProductAsync_NonAdminUser_UnauthorizedAccessException&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>
